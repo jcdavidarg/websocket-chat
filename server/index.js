@@ -5,7 +5,7 @@ import logger from 'morgan';
 //  ESTABLESCO EL PUERTO
 const port = process.env.PORT ?? 3000;
 
-//  ESTABLESCO EL SSERVIDOR CON EXPRESS
+//  ESTABLESCO EL SERVIDOR CON EXPRESS
 const app = express();
 //  QUE EL SERVIDOR USO EL LOGGER
 app.use(logger('dev'));
