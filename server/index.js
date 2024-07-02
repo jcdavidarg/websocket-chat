@@ -8,14 +8,17 @@ import { createServer } from "node:http";
 //  ESTABLESCO EL PUERTO
 const port = process.env.PORT ?? 3000;
 
-
+//  CREO SERVIDOR HTTP E INTEGRO EXPRESS Y SOCKET.IO
 const app = express();
 const server = createServer(app);
 const io = new Server(server);
 
 //  CUANDO SE CONECTE AL SOCKET IO
-io.on("connection", () => {
+io.on("connection", (socket) => {
   console.log("A user has connected!");
+  socket.on("disconnect", () => {
+    console.log("An user has disconnected");
+  });
 });
 
 //  QUE EL SERVIDOR USO EL LOGGER

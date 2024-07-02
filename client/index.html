@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat</title>
+    <!-- PUEDO IMPORTAR MODULOS COMO NODE EN HTML -->
+    <script type="module">
+        import { io } from 'https://cdn.socket.io/4.7.5/socket.io.esm.min.js';
+
+        // SE CONECTA AUTOMATICAMENTE PORQUE YA ESTA DEFINIDA UNA CONEXION EN EL SERVIDOR 
+        const socket = io();
+    </script>
     <style>
       *,
       *::before,
