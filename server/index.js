@@ -13,6 +13,9 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server);
 
+//  CONFIGURAR EXPRESS PARA SERVIR ARCHIVOS ESTÁTICOS
+app.use(express.static("public"));
+
 //  CUANDO SE CONECTE AL SOCKET IO
 io.on("connection", (socket) => {
   console.log("A user has connected!");
