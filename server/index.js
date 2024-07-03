@@ -19,8 +19,14 @@ app.use(express.static("public"));
 //  CUANDO SE CONECTE AL SOCKET IO
 io.on("connection", (socket) => {
   console.log("A user has connected!");
+
   socket.on("disconnect", () => {
     console.log("An user has disconnected");
+  });
+
+  //  SERVIDOR ESCUCHA RECIBE LOS MSJS DEL CLIENTE
+  socket.on("chat message", (msg) => {
+    console.log("message: " + msg);
   });
 });
 
